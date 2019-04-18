@@ -5,8 +5,14 @@ contract('Courses:setInstructor', function(accounts) {
     courses.then(function(contract){
       return contract.setInstructor("0xfe771a17071804d9f6016026fbc28d82b3138faf", 22, "John", "Doe"); 
     }).then(function(result){
-        
-      done();
+      var courses = Courses.deployed();
+      courses.then(function(contract){
+        return contract.getInstructors();
+      }).then(function(result){
+        var arr = ["0xFe771a17071804D9F6016026fbc28D82B3138faf"];
+          assert.equal(result[0],arr[0]);
+          done();
+      }) 
     })
   });
 });
