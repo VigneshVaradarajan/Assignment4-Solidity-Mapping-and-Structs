@@ -13,6 +13,11 @@ Function Test 1 -   Contract: Courses:setInstructor -  Ensures that an instructo
 ```
 contract.setInstructor("0xfe771a17071804d9f6016026fbc28d82b3138faf", 22, "John", "Doe"); 
 
+Expect :
+
+  var arr = ["0xFe771a17071804D9F6016026fbc28D82B3138faf"];
+  assert.equal(result[0],arr[0]);
+
 ```
 
 Function Test 2 -   Courses:getInstructors -  Ensures that the array of instructors are retrieved.
